@@ -1,0 +1,28 @@
+{
+  "name": "infinite-divs",
+  "version": "1.0.0",
+  "description": "Render an infinite list of divs without crashing the browser.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supreetpal/infinite-divs.git"
+  },
+  "keywords": [
+    "infinite",
+    "divs",
+    "render",
+    "performance"
+  ],
+  "author": "@supreetpal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/supreetpal/infinite-divs/issues"
+  },
+  "homepage": "https://github.com/supreetpal/infinite-divs#readme"
+}
