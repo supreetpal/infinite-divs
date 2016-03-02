@@ -1,4 +1,4 @@
-[{
+let data = [{
   "id": 1,
   "name": "Mustermann 1",
   "img": "./images/image1.png"
@@ -1598,4 +1598,6 @@
   "id": 400,
   "name": "Mustermann 400",
   "img": "./images/image400.png"
-}]
+}];
+
+export default data;
