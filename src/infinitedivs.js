@@ -1,1 +1,5 @@
-let viewport = {};
+class infinitedivs {
+
+}
+
+export default infinitedivs;
