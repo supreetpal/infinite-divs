@@ -1,6 +1,8 @@
 import inputData from './data.js';
+import infiniteDivs from './lib.js';
 
 let divArray = [];
+let root = document.getElementById('root');
 
 for (let value of inputData) {
   let div = document.createElement('div'),
@@ -8,13 +10,20 @@ for (let value of inputData) {
     span = document.createElement('span');
 
   img.src = value.img;
-  img.style = 'vertical-align: middle; width: 50px; margin: 20px';
+  img.style = 'vertical-align: middle; height: 50px; margin: 20px';
   span.innerText = value.name;
   span.setAttribute('style', 'text-decoration: underline');
   div.appendChild(img);
   div.appendChild(span);
   divArray.push(div);
-}
 
-let body = document.getElementById('root');
-body.appendChild(divArray[0]);
+};
+
+let config = {
+	root,
+	divArray,
+	divHeight : 90,
+	bufferMultiplier : 3
+};
+
+let infinitedivs = new infiniteDivs(config);
