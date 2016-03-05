@@ -6,7 +6,10 @@ class InfiniteDivs {
     this.generateView(config.divArray);
   }
 
-  appendNodes(nodeList, parent) {
+  appendNodes(nodeList) {
+  	let config = this.config,
+  	parent = config.root;
+
     for (let value of nodeList) {
       parent.appendChild(value);
     }
@@ -22,24 +25,23 @@ class InfiniteDivs {
       let visibleNodesNumber = Math.ceil(window.innerHeight / nodeHeight),
         nodesRequiredNumber = visibleNodesNumber * bufferMultiplier,
         requiredNodeList = domList.slice(lastNodeIndex, lastNodeIndex + nodesRequiredNumber),
-        newLastNodeIndex = lastNodeIndex + nodesRequiredNumber,
-        parentNode = this.config.root;
+        newLastNodeIndex = lastNodeIndex + nodesRequiredNumber;
 
       this.lastNodeIndex = Math.min(newLastNodeIndex, domList.length);
-
-      this.appendNodes(requiredNodeList, parentNode);
+      this.appendNodes(requiredNodeList);
     }
   }
 
-  viewDoctor(parentNode) {
-    let config = this.config;
-    console.log(parentNode.scrollHeight, parentNode.scrollTop, parentNode.clientHeight);
+  viewDoctor() {
+    let config = this.config,
+    parentNode = config.root;
+    // console.log(parentNode.scrollHeight, parentNode.scrollTop, parentNode.clientHeight);
 
     let bufferConsumed = parentNode.scrollHeight <
       parentNode.scrollTop + (parentNode.clientHeight) * config.bufferMultiplier ?
       true : false;
 
-    console.log(bufferConsumed);
+    // console.log(bufferConsumed);
     if (bufferConsumed) this.generateView(config.divArray);
   }
 }
