@@ -1,5 +1,5 @@
 import inputData from './data.js';
-import infiniteDivs from './lib.js';
+import infiniteDivs from '../../lib/infinitedivs.js';
 
 let divArray = [];
 let root = document.body;
