@@ -40,7 +40,7 @@ class InfiniteDivs {
     parentNode = config.root;
     // console.log(parentNode.scrollHeight, parentNode.scrollTop, parentNode.clientHeight);
 
-    let bufferConsumed = parentNode.scrollHeight <
+    let bufferConsumed = parentNode.scrollHeight <=
       parentNode.scrollTop + (parentNode.clientHeight) * config.bufferMultiplier ?
       true : false;
 
