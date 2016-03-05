@@ -8,11 +8,14 @@ class InfiniteDivs {
 
   appendNodes(nodeList) {
   	let config = this.config,
-  	parent = config.root;
+  	parent = config.root,
+  	docfrag = document.createDocumentFragment();
 
     for (let value of nodeList) {
-      parent.appendChild(value);
+      docfrag.appendChild(value);
     }
+
+    parent.appendChild(docfrag);
   }
 
   generateView(domList) {
