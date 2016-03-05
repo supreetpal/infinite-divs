@@ -10,7 +10,8 @@ for (let value of inputData) {
     span = document.createElement('span');
 
   img.src = value.img;
-  img.style = 'vertical-align: middle; height: 50px; margin: 20px';
+  img.style = 'vertical-align: middle; height: 50px; width: 50px; margin: 20px';
+  img.alt = 'avatar',
   span.innerText = value.name;
   span.setAttribute('style', 'text-decoration: underline');
   div.appendChild(img);
@@ -23,7 +24,7 @@ let config = {
   root,
   divArray,
   divHeight: 90,
-  bufferMultiplier: 3
+  bufferMultiplier: 2
 };
 
 let infinitedivs = new infiniteDivs(config);
