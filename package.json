@@ -7,8 +7,9 @@
     "example": "examples"
   },
   "scripts": {
-    "dev": "concurrently --kill-others 'npm run example' 'npm run lib'",
-    "example": "cd examples && node server.js",
+    "dev": "concurrently --kill-others 'npm run ex-dev' 'npm run lib'",
+    "ex-dev": "cd examples && node server.js",
+    "ex-prod": "cd examples && webpack --config webpack.prod.config.js && cp -r ./images ./dist/images",
     "lib": "babel src -w -d lib"
   },
   "repository": {
