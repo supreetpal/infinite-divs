@@ -2,7 +2,7 @@ import inputData from './data.js';
 import infiniteDivs from './lib.js';
 
 let divArray = [];
-let root = document.getElementById('root');
+let root = document.body;
 
 for (let value of inputData) {
   let div = document.createElement('div'),
@@ -20,10 +20,15 @@ for (let value of inputData) {
 };
 
 let config = {
-	root,
-	divArray,
-	divHeight : 90,
-	bufferMultiplier : 3
+  root,
+  divArray,
+  divHeight: 90,
+  bufferMultiplier: 3
 };
 
 let infinitedivs = new infiniteDivs(config);
+
+function scrollListener() {
+  infinitedivs.viewDoctor(config.root);
+};
+document.addEventListener('scroll', scrollListener);
