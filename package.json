@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "concurrently --kill-others 'npm run ex-dev' 'npm run lib'",
-    "ex-dev": "cd examples && node server.js",
-    "ex-prod": "cd examples && webpack --config webpack.prod.config.js && cp -r ./images ./dist/images",
+    "ex-dev": "cd example && node server.js",
+    "ex-prod": "cd example && webpack --config webpack.prod.config.js && cp -r ./images/ ./dist/images/",
     "lib": "babel src -w -d lib"
   },
   "repository": {
