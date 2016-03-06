@@ -8,10 +8,10 @@ function divGenerator(item) {
     img = document.createElement('img'),
     span = document.createElement('span');
 
-  img.src = item.img;
-  img.style = 'vertical-align: middle; height: 50px; width: 50px; margin: 20px';
-  img.alt = 'avatar';
-  span.innerText = item.name;
+  img.setAttribute('src', item.img);
+  img.setAttribute('style', 'vertical-align: middle; height: 50px; width: 50px; margin: 20px');
+  img.setAttribute('alt', 'avatar');
+  span.textContent = item.name;
   span.setAttribute('style', 'text-decoration: underline');
   div.appendChild(img);
   div.appendChild(span);
