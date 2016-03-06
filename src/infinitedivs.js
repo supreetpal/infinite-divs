@@ -3,41 +3,43 @@ class InfiniteDivs {
   constructor(config) {
     this.config = config;
     this.lastNodeIndex = 0;
-    this.generateView(config.divArray);
+    this.generateView();
   }
 
   appendNodes(nodeList) {
-  	let config = this.config,
-  	parent = config.root,
-  	docfrag = document.createDocumentFragment();
+    let config = this.config,
+      parent = config.rootElement,
+      docfrag = document.createDocumentFragment();
 
     for (let value of nodeList) {
-      docfrag.appendChild(value);
+      let div = config.divGenerator(value);
+      docfrag.appendChild(div);
     }
 
     parent.appendChild(docfrag);
   }
 
-  generateView(domList) {
+  generateView() {
     let config = this.config,
       bufferMultiplier = config.bufferMultiplier,
       nodeHeight = config.divHeight,
-      lastNodeIndex = this.lastNodeIndex;
+      lastNodeIndex = this.lastNodeIndex,
+      dataArray = config.dataArray;
 
-    if (lastNodeIndex < domList.length) {
+    if (lastNodeIndex < dataArray.length) {
       let visibleNodesNumber = Math.ceil(window.innerHeight / nodeHeight),
         nodesRequiredNumber = visibleNodesNumber * bufferMultiplier,
-        requiredNodeList = domList.slice(lastNodeIndex, lastNodeIndex + nodesRequiredNumber),
-        newLastNodeIndex = lastNodeIndex + nodesRequiredNumber;
+        newLastNodeIndex = lastNodeIndex + nodesRequiredNumber,
+        requiredNodeList = dataArray.slice(lastNodeIndex, newLastNodeIndex);
 
-      this.lastNodeIndex = Math.min(newLastNodeIndex, domList.length);
       this.appendNodes(requiredNodeList);
+      this.lastNodeIndex = Math.min(newLastNodeIndex, dataArray.length);
     }
   }
 
   viewDoctor() {
     let config = this.config,
-    parentNode = config.root;
+      parentNode = config.rootElement;
     // console.log(parentNode.scrollHeight, parentNode.scrollTop, parentNode.clientHeight);
 
     let bufferConsumed = parentNode.scrollHeight <=
@@ -45,7 +47,7 @@ class InfiniteDivs {
       true : false;
 
     // console.log(bufferConsumed);
-    if (bufferConsumed) this.generateView(config.divArray);
+    if (bufferConsumed) this.generateView();
   }
 }
 

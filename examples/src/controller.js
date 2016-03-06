@@ -1,35 +1,36 @@
 import inputData from './data.js';
 import infiniteDivs from '../../lib/infinitedivs.js';
 
-let divArray = [];
-let root = document.body;
+let rootElement = document.body;
 
-for (let value of inputData) {
+function divGenerator(item) {
   let div = document.createElement('div'),
     img = document.createElement('img'),
     span = document.createElement('span');
 
-  img.src = value.img;
+  img.src = item.img;
   img.style = 'vertical-align: middle; height: 50px; width: 50px; margin: 20px';
-  img.alt = 'avatar',
-  span.innerText = value.name;
+  img.alt = 'avatar';
+  span.innerText = item.name;
   span.setAttribute('style', 'text-decoration: underline');
   div.appendChild(img);
   div.appendChild(span);
-  divArray.push(div);
+  return div;
+}
 
-};
+let dataArray = inputData;
 
 let config = {
-  root,
-  divArray,
+  bufferMultiplier: 2,
+  dataArray,
+  divGenerator,
   divHeight: 90,
-  bufferMultiplier: 2
+  rootElement
 };
 
 let infinitedivs = new infiniteDivs(config);
 
 function scrollListener() {
-  infinitedivs.viewDoctor(config.root);
+  infinitedivs.viewDoctor();
 };
 document.addEventListener('scroll', scrollListener);
