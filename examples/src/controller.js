@@ -13,6 +13,7 @@ function divGenerator(item) {
   img.setAttribute('alt', 'avatar');
   span.textContent = item.name;
   span.setAttribute('style', 'text-decoration: underline');
+  div.setAttribute('style', 'border-bottom: 1px dotted');
   div.appendChild(img);
   div.appendChild(span);
   return div;
@@ -33,4 +34,5 @@ let infinitedivs = new infiniteDivs(config);
 function scrollListener() {
   infinitedivs.viewDoctor();
 };
+
 document.addEventListener('scroll', scrollListener);
