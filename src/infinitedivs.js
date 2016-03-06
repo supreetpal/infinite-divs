@@ -40,13 +40,11 @@ class InfiniteDivs {
   viewDoctor() {
     let config = this.config,
       parentNode = config.rootElement;
-    // console.log(parentNode.scrollHeight, parentNode.scrollTop, parentNode.clientHeight);
 
     let bufferConsumed = parentNode.scrollHeight <=
       parentNode.scrollTop + (parentNode.clientHeight) * config.bufferMultiplier ?
       true : false;
 
-    // console.log(bufferConsumed);
     if (bufferConsumed) this.generateView();
   }
 }
