@@ -2,9 +2,10 @@
   "name": "infinite-divs",
   "version": "1.0.0",
   "description": "Render an infinite list of divs without crashing the browser.",
-  "main": "index.js",
+  "main": "lib/infinitedivs.js",
   "directories": {
-    "example": "examples"
+    "example": "./example",
+    "lib": "./lib"
   },
   "scripts": {
     "dev": "concurrently --kill-others 'npm run ex-dev' 'npm run lib'",
