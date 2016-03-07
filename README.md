@@ -5,6 +5,8 @@ See [Demo](https://supreetpal.in/infinite-divs)
 
 # How to use
 
+` npm install infinite-divs `
+
 - Create the config object.
 - Create a new instance initiated using the config.
 - Attach the viewDoctor method call to the scroll event listener. 
