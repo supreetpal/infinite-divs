@@ -12,7 +12,7 @@ See [Demo](https://supreetpal.in/infinite-divs)
 - Attach the viewDoctor method call to the scroll event listener. 
 
 ```
-import infiniteDivs from 'infinitedivs';
+import infiniteDivs from 'infinite-divs';
 
 let infinitedivs = new infiniteDi-vs(config);
 
