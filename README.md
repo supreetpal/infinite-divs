@@ -14,7 +14,7 @@ See [Demo](https://supreetpal.in/infinite-divs)
 ```
 import infiniteDivs from 'infinitedivs';
 
-let infinitedivs = new infiniteDivs(config);
+let infinitedivs = new infiniteDi-vs(config);
 
 function scrollListener() {
   infinitedivs.viewDoctor();
