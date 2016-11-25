@@ -1,7 +1,7 @@
 # infinite-divs
 
 Render a very long list of complex div containers incrementally. 
-See [Demo](https://supreetpal.in/infinite-divs)
+See [Demo](http://supreetpal.in/infinite-divs)
 
 # How to use
 
